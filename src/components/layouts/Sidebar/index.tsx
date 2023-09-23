@@ -1,67 +1,98 @@
-import { Button } from '@/components/ui/button';
-import React, { FC } from 'react'
+"use client";
 
-import { AiOutlineHome, AiOutlineMessage, AiOutlineUsergroupAdd, AiOutlineCalendar, AiOutlineLogout } from 'react-icons/ai'
-import { BsBuildings, BsGear } from 'react-icons/bs'
-import { HiOutlineClipboardDocumentList } from 'react-icons/hi2'
+import { Button } from "@/components/ui/button";
+import { useRouter } from "next/navigation";
+import React, { FC } from "react";
 
-interface SidebarProps {
+import {
+  AiOutlineHome,
+  AiOutlineMessage,
+  AiOutlineUsergroupAdd,
+  AiOutlineCalendar,
+  AiOutlineLogout,
+} from "react-icons/ai";
+import { BsBuildings, BsGear } from "react-icons/bs";
+import { HiOutlineClipboardDocumentList } from "react-icons/hi2";
 
-}
+interface SidebarProps {}
 
-const Sidebar: FC<SidebarProps> = ({  }) => {
+const Sidebar: FC<SidebarProps> = ({}) => {
+  const router = useRouter();
+
   return (
-    <div className='pb-12 min-h-screen'>
-      <div className='space-y-4 py-4'>
-        <div className='px-3 py-2'>
-          <h2 className='mb-2 px-4 text-lg font-semibold'>
-            Dashboard
-          </h2>
+    <div className="pb-12 min-h-screen">
+      <div className="space-y-4 py-4">
+        <div className="px-3 py-2">
+          <h2 className="mb-2 px-4 text-lg font-semibold">Dashboard</h2>
           <div>
-            <Button variant={"ghost"} className='w-full justify-start rounded-none hover:text-primary'>
+            <Button
+              variant={"ghost"}
+              className="w-full justify-start rounded-none hover:text-primary"
+              onClick={() => router.push("/")}
+            >
               <AiOutlineHome className="mr-4 text-lg" />
               Home
             </Button>
-            <Button variant={"ghost"} className='w-full justify-start rounded-none hover:text-primary'>
+            <Button
+              variant={"ghost"}
+              className="w-full justify-start rounded-none hover:text-primary"
+            >
               <AiOutlineMessage className="mr-4 text-lg" />
               Messages
             </Button>
-            <Button variant={"ghost"} className='w-full justify-start rounded-none hover:text-primary'>
+            <Button
+              variant={"ghost"}
+              className="w-full justify-start rounded-none hover:text-primary"
+            >
               <BsBuildings className="mr-4 text-lg" />
               Company Profile
             </Button>
-            <Button variant={"ghost"} className='w-full justify-start rounded-none hover:text-primary'>
+            <Button
+              variant={"ghost"}
+              className="w-full justify-start rounded-none hover:text-primary"
+            >
               <AiOutlineUsergroupAdd className="mr-4 text-lg" />
               All Applicants
             </Button>
-            <Button variant={"ghost"} className='w-full justify-start rounded-none hover:text-primary'>
+            <Button
+              variant={"ghost"}
+              className="w-full justify-start rounded-none hover:text-primary"
+              onClick={() => router.push("/job-listings")}
+            >
               <HiOutlineClipboardDocumentList className="mr-4 text-lg" />
               Job Listings
             </Button>
-            <Button variant={"ghost"} className='w-full justify-start rounded-none hover:text-primary'>
+            <Button
+              variant={"ghost"}
+              className="w-full justify-start rounded-none hover:text-primary"
+            >
               <AiOutlineCalendar className="mr-4 text-lg" />
               My Schedule
             </Button>
           </div>
         </div>
       </div>
-      <div className='space-y-4 py-4'>
-          <div className='px-3 py-2'>
-            <h2 className='mb-2 px-4 text-lg font-semibold'>
-              Settings
-            </h2>
-            <Button variant={"ghost"} className='w-full justify-start rounded-none hover:text-primary'>
-              <BsGear className="mr-4 text-lg" />
-              Settings
-            </Button>
-            <Button variant={"ghost"} className='w-full justify-start rounded-none text-red-500 hover:bg-red-200 hover:text-red-500'>
-              <AiOutlineLogout className="mr-4 text-lg" />
-              Logout
-            </Button>
-          </div>
+      <div className="space-y-4 py-4">
+        <div className="px-3 py-2">
+          <h2 className="mb-2 px-4 text-lg font-semibold">Settings</h2>
+          <Button
+            variant={"ghost"}
+            className="w-full justify-start rounded-none hover:text-primary"
+          >
+            <BsGear className="mr-4 text-lg" />
+            Settings
+          </Button>
+          <Button
+            variant={"ghost"}
+            className="w-full justify-start rounded-none text-red-500 hover:bg-red-200 hover:text-red-500"
+          >
+            <AiOutlineLogout className="mr-4 text-lg" />
+            Logout
+          </Button>
         </div>
+      </div>
     </div>
-  )
-}
+  );
+};
 
 export default Sidebar;
