@@ -1,3 +1,5 @@
+import Applicants from "@/components/organisms/Applicants";
+import JobDetail from "@/components/organisms/JobDetail";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { ArrowLeftIcon } from "lucide-react";
 import Link from "next/link";
@@ -29,10 +31,10 @@ const JobDetailPage: FC<JobDetailPageProps> = ({}) => {
             <TabsTrigger value="jobdetails">Job Details</TabsTrigger>
           </TabsList>
           <TabsContent value="applicants">
-            Make changes to your applicants here.
+            <Applicants />
           </TabsContent>
           <TabsContent value="jobdetails">
-            Change your job details here.
+            <JobDetail />
           </TabsContent>
         </Tabs>
       </div>

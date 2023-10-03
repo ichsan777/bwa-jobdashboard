@@ -10,8 +10,6 @@ import {
 } from "@/components/ui/table";
 import { JOB_LISTING_COLUMNS, JOB_LISTING_DATA } from "../constant";
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { MoreVertical } from "lucide-react";
 import ButtonActionTable from "@/components/organisms/ButtonActionTable";
 
 interface JobListingsPageProps {}
